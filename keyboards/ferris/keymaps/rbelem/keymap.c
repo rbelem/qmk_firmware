@@ -1,7 +1,30 @@
 #include QMK_KEYBOARD_H
 #include "keymap_brazilian_abnt2.h"
 
+enum combos {
+  W_E_ESC,
+  E_R_TAB,
+  Y_U_INSERT,
+  U_I_DELETE,
+  I_O_BSPC,
+  K_L_ENTER,
+};
 
+const uint16_t PROGMEM w_e_esc[] = { KC_W, KC_E, COMBO_END};
+const uint16_t PROGMEM e_r_tab[] = { KC_E, KC_R, COMBO_END};
+const uint16_t PROGMEM y_u_insert[] = { KC_Y, KC_U, COMBO_END};
+const uint16_t PROGMEM u_i_delete[] = { KC_U, KC_I, COMBO_END};
+const uint16_t PROGMEM i_o_bspc[] = { KC_I, KC_O, COMBO_END};
+const uint16_t PROGMEM k_l_enter[] = { KC_K, KC_L, COMBO_END};
+
+combo_t key_combos[COMBO_COUNT] = {
+  [W_E_ESC] = COMBO(w_e_esc, KC_ESC),
+  [E_R_TAB] = COMBO(e_r_tab, KC_TAB),
+  [Y_U_INSERT] = COMBO(y_u_insert, KC_INSERT),
+  [U_I_DELETE] = COMBO(u_i_delete, KC_DELETE),
+  [I_O_BSPC] = COMBO(i_o_bspc, KC_BSPC),
+  [K_L_ENTER] = COMBO(k_l_enter, KC_ENTER),
+};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT_split_3x5_2(
