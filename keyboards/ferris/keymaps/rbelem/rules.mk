@@ -3,3 +3,6 @@ CONSOLE_ENABLE = yes
 COMMAND_ENABLE = yes
 COMBO_ENABLE = yes
 SPLIT_KEYBOARD = yes
+TAP_DANCE_ENABLE = yes
+
+SRC += features/tap_dance.c
