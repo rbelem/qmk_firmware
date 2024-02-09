@@ -23,6 +23,7 @@ enum {
 enum {
     OSL_SYM_LCTL,
     OSL_NUM_LGUI,
+    OSL_COMPOSE_LALT,
 };
 
 // Alt key action:
@@ -42,3 +43,6 @@ void osl_sym_lctl_reset (tap_dance_state_t *state, void *user_data);
 
 void osl_num_lgui_finished (tap_dance_state_t *state, void *user_data);
 void osl_num_lgui_reset (tap_dance_state_t *state, void *user_data);
+
+void osl_compose_lalt_finished (tap_dance_state_t *state, void *user_data);
+void osl_compose_lalt_reset (tap_dance_state_t *state, void *user_data);

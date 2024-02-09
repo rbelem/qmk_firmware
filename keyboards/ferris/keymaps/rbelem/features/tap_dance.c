@@ -6,6 +6,7 @@
 tap_dance_action_t tap_dance_actions[] = {
     [OSL_SYM_LCTL] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, osl_sym_lctl_finished, osl_sym_lctl_reset),
     [OSL_NUM_LGUI] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, osl_num_lgui_finished, osl_num_lgui_reset),
+    [OSL_COMPOSE_LALT] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, osl_compose_lalt_finished, osl_compose_lalt_reset),
 };
 
 
@@ -87,3 +88,40 @@ void osl_num_lgui_reset (tap_dance_state_t *state, void *user_data) {
   osl_num_lgui_tap_state.state = 0;
 }
 
+
+static tap osl_compose_lalt_tap_state = {
+  .is_press_action = true,
+  .state = 0
+};
+
+void osl_compose_lalt_finished (tap_dance_state_t *state, void *user_data) {
+  osl_compose_lalt_tap_state.state = tap_dance_state(state);
+  switch (osl_compose_lalt_tap_state.state) {
+    case SINGLE_TAP:
+        register_code16(LSFT(KC_RALT));
+        break;
+    case SINGLE_HOLD:
+        register_code(KC_LALT);
+        break;
+    case DOUBLE_TAP:
+    case DOUBLE_HOLD:
+        register_code(KC_RALT);
+        break;
+  }
+}
+
+void osl_compose_lalt_reset (tap_dance_state_t *state, void *user_data) {
+  switch (osl_compose_lalt_tap_state.state) {
+    case SINGLE_TAP:
+        unregister_code16(LSFT(KC_RALT));
+        break;
+    case SINGLE_HOLD:
+        unregister_code(KC_LALT);
+        break;
+    case DOUBLE_TAP:
+    case DOUBLE_HOLD:
+        unregister_code(KC_RALT);
+        break;
+  }
+  osl_compose_lalt_tap_state.state = 0;
+}
