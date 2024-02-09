@@ -3,9 +3,17 @@
 #include "features/tap_dance.h"
 #include "keymap.h"
 
+bool is_alt_tab_active = false;
+uint16_t alt_tab_timer = 0;
+
+enum custom_keycodes {
+  ALT_TAB = SAFE_RANGE,
+};
+
 enum combos {
   W_E_ESC,
   E_R_TAB,
+  R_F_ALT_TAB,
   G_B_BASE_LAYER,
   Q_A_FNC_LAYER,
   A_Z_SYS_LAYER,
@@ -24,6 +32,7 @@ enum combos {
 
 const uint16_t PROGMEM w_e_esc[] = { KC_W, KC_E, COMBO_END};
 const uint16_t PROGMEM e_r_tab[] = { KC_E, KC_R, COMBO_END};
+const uint16_t PROGMEM r_f_alt_tab[] = { KC_R, KC_F, COMBO_END};
 
 const uint16_t PROGMEM g_b_base_layer[] = { KC_G, KC_B, COMBO_END };
 const uint16_t PROGMEM q_a_fnc_layer[] = { KC_Q, KC_A, COMBO_END };
@@ -49,6 +58,7 @@ const uint16_t PROGMEM b_n_pause[] = { KC_B, KC_N, COMBO_END };
 combo_t key_combos[COMBO_COUNT] = {
   [W_E_ESC] = COMBO(w_e_esc, KC_ESC),
   [E_R_TAB] = COMBO(e_r_tab, KC_TAB),
+  [R_F_ALT_TAB] = COMBO(r_f_alt_tab, ALT_TAB),
 
   [G_B_BASE_LAYER] = COMBO(g_b_base_layer, TO(BAS)),
   [Q_A_FNC_LAYER] = COMBO(q_a_fnc_layer, OSL(FNC)),
@@ -133,3 +143,31 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
 
 };
 #endif // defined(ENCODER_ENABLE) && defined(ENCODER_MAP_ENABLE)
+
+// https://github.com/qmk/qmk_firmware/blob/master/docs/feature_macros.md#super-alttab
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  switch (keycode) {
+    case ALT_TAB:
+      if (record->event.pressed) {
+        if (!is_alt_tab_active) {
+          is_alt_tab_active = true;
+          register_code(KC_LALT);
+        }
+        alt_tab_timer = timer_read();
+        register_code(KC_TAB);
+      } else {
+        unregister_code(KC_TAB);
+      }
+      break;
+  }
+  return true;
+}
+
+void matrix_scan_user(void) {
+  if (is_alt_tab_active) {
+    if (timer_elapsed(alt_tab_timer) > 1000) {
+      unregister_code(KC_LALT);
+      is_alt_tab_active = false;
+    }
+  }
+}
