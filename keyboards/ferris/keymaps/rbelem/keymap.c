@@ -6,26 +6,69 @@
 enum combos {
   W_E_ESC,
   E_R_TAB,
+  G_B_BASE_LAYER,
+  Q_A_FNC_LAYER,
+  A_Z_SYS_LAYER,
   Y_U_INSERT,
   U_I_DELETE,
   I_O_BSPC,
   K_L_ENTER,
+  Y_N_PSCR,
+  Y_H_NAV_LAYER,
+  H_N_MOS_LAYER,
+  P_TILD_KPD_LAYER,
+  TILD_SCLN_MED_LAYER,
+  G_H_CAPSWORD,
+  B_N_PAUSE
 };
 
 const uint16_t PROGMEM w_e_esc[] = { KC_W, KC_E, COMBO_END};
 const uint16_t PROGMEM e_r_tab[] = { KC_E, KC_R, COMBO_END};
+
+const uint16_t PROGMEM g_b_base_layer[] = { KC_G, KC_B, COMBO_END };
+const uint16_t PROGMEM q_a_fnc_layer[] = { KC_Q, KC_A, COMBO_END };
+const uint16_t PROGMEM a_z_sys_layer[] = { KC_A, KC_Z, COMBO_END };
+
+
 const uint16_t PROGMEM y_u_insert[] = { KC_Y, KC_U, COMBO_END};
 const uint16_t PROGMEM u_i_delete[] = { KC_U, KC_I, COMBO_END};
 const uint16_t PROGMEM i_o_bspc[] = { KC_I, KC_O, COMBO_END};
 const uint16_t PROGMEM k_l_enter[] = { KC_K, KC_L, COMBO_END};
+const uint16_t PROGMEM y_n_pscr[] = { KC_Y, KC_N, COMBO_END };
+
+const uint16_t PROGMEM y_h_nav_layer[] = { KC_Y, KC_H, COMBO_END };
+const uint16_t PROGMEM h_n_mos_layer[] = { KC_H, KC_N, COMBO_END };
+const uint16_t PROGMEM p_tild_kpd_layer[] = { KC_P, BR_TILD, COMBO_END };
+const uint16_t PROGMEM tild_scln_med_layer[] = { BR_TILD, BR_SCLN, COMBO_END };
+
+
+const uint16_t PROGMEM g_h_capsword[] = { KC_G, KC_H, COMBO_END };
+const uint16_t PROGMEM b_n_pause[] = { KC_B, KC_N, COMBO_END };
+
 
 combo_t key_combos[COMBO_COUNT] = {
   [W_E_ESC] = COMBO(w_e_esc, KC_ESC),
   [E_R_TAB] = COMBO(e_r_tab, KC_TAB),
+
+  [G_B_BASE_LAYER] = COMBO(g_b_base_layer, TO(BAS)),
+  [Q_A_FNC_LAYER] = COMBO(q_a_fnc_layer, OSL(FNC)),
+  [A_Z_SYS_LAYER] = COMBO(a_z_sys_layer, OSL(SYS)),
+
+
   [Y_U_INSERT] = COMBO(y_u_insert, KC_INSERT),
   [U_I_DELETE] = COMBO(u_i_delete, KC_DELETE),
   [I_O_BSPC] = COMBO(i_o_bspc, KC_BSPC),
   [K_L_ENTER] = COMBO(k_l_enter, KC_ENTER),
+  [Y_N_PSCR] = COMBO(y_n_pscr, KC_PSCR),
+
+  [Y_H_NAV_LAYER] = COMBO(y_h_nav_layer, TG(NAV)),
+  [H_N_MOS_LAYER] = COMBO(h_n_mos_layer, TG(MOS)),
+  [P_TILD_KPD_LAYER] = COMBO(p_tild_kpd_layer, TG(KPD)),
+  [TILD_SCLN_MED_LAYER] = COMBO(tild_scln_med_layer, TG(MED)),
+
+
+  [G_H_CAPSWORD] = COMBO(g_h_capsword, CW_TOGG),
+  [B_N_PAUSE] = COMBO(b_n_pause, KC_PAUSE)
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
