@@ -107,16 +107,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         OSM(MOD_LCTL), KC_TRNS,                                        OSM(MOD_LGUI), OSM(MOD_LALT)
     ),
     [NAV] = LAYOUT_split_3x5_2(
-        KC_LSFT, KC_LGUI, KC_LALT, KC_LCTL, KC_NO,    KC_HOME, KC_PGDN, KC_PGUP, KC_END,   KC_NO,
-        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT, KC_NO,
-        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_NO,
-        KC_TRNS, KC_TRNS,                             KC_TRNS, KC_TRNS
+        KC_NO, KC_LGUI, KC_LALT, KC_LCTL, KC_NO,    KC_HOME, KC_PGDN, KC_PGUP, KC_END,   KC_NO,
+        KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT, KC_NO,
+        KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_NO,
+        KC_TRNS, KC_TRNS,                           KC_TRNS, KC_TRNS
     ),
     [MOS] = LAYOUT_split_3x5_2(
-        KC_LSFT, KC_LGUI, KC_LALT, KC_LCTL, KC_NO,    KC_WH_L,    KC_WH_D,    KC_WH_U,    KC_WH_R, KC_MS_ACCEL0,
-        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_MS_L,    KC_MS_D,    KC_MS_U,    KC_MS_R, KC_MS_ACCEL1,
-        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_MS_BTN3, KC_MS_BTN4, KC_MS_BTN5, KC_NO,   KC_MS_ACCEL2,
-        KC_TRNS, KC_TRNS,                             KC_MS_BTN1, KC_MS_BTN2
+        KC_NO, KC_LGUI, KC_LALT, KC_LCTL, KC_NO,    KC_WH_L,    KC_WH_D,    KC_WH_U,    KC_WH_R, KC_MS_ACCEL0,
+        KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_MS_L,    KC_MS_D,    KC_MS_U,    KC_MS_R, KC_MS_ACCEL1,
+        KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_MS_BTN3, KC_MS_BTN4, KC_MS_BTN5, KC_NO,   KC_MS_ACCEL2,
+        KC_TRNS, KC_TRNS,                           KC_MS_BTN1, KC_MS_BTN2
     ),
     [MED] = LAYOUT_split_3x5_2(
         KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,    KC_NO,   KC_BRID, KC_BRIU, KC_NO,   KC_NO,
