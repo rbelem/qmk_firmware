@@ -48,6 +48,10 @@ void osl_sym_lctl_finished (tap_dance_state_t *state, void *user_data) {
         register_code(KC_LCTL);
         layer_on(SYM);
         break;
+    case TRIPLE_TAP:
+        set_oneshot_layer(FNC, ONESHOT_START);
+        clear_oneshot_layer_state(ONESHOT_PRESSED);
+        break;
   }
 }
 
@@ -57,6 +61,7 @@ void osl_sym_lctl_reset (tap_dance_state_t *state, void *user_data) {
     case SINGLE_HOLD: unregister_code(KC_LCTL); break;
     case DOUBLE_TAP: unregister_code(KC_RCTL); break;
     case DOUBLE_HOLD: layer_off(SYM); unregister_code(KC_LCTL); break;
+    case TRIPLE_TAP: break;
   }
   osl_sym_lctl_tap_state.state = 0;
 }

@@ -16,7 +16,6 @@ enum combos {
   R_F_ALT_TAB,
   T_G_NAV_LAYER,
   G_B_BASE_LAYER,
-  Q_A_FNC_LAYER,
   A_Z_SYS_LAYER,
   Y_U_INSERT,
   U_I_DELETE,
@@ -37,7 +36,6 @@ const uint16_t PROGMEM r_f_alt_tab[] = { KC_R, KC_F, COMBO_END};
 
 const uint16_t PROGMEM t_g_nav_layer[] = { KC_T, KC_G, COMBO_END };
 const uint16_t PROGMEM g_b_base_layer[] = { KC_G, KC_B, COMBO_END };
-const uint16_t PROGMEM q_a_fnc_layer[] = { KC_Q, KC_A, COMBO_END };
 const uint16_t PROGMEM a_z_sys_layer[] = { KC_A, KC_Z, COMBO_END };
 
 
@@ -64,7 +62,6 @@ combo_t key_combos[COMBO_COUNT] = {
 
   [T_G_NAV_LAYER] = COMBO(t_g_nav_layer, MO(NAV)),
   [G_B_BASE_LAYER] = COMBO(g_b_base_layer, TO(BAS)),
-  [Q_A_FNC_LAYER] = COMBO(q_a_fnc_layer, OSL(FNC)),
   [A_Z_SYS_LAYER] = COMBO(a_z_sys_layer, OSL(SYS)),
 
 
