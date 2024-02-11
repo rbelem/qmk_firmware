@@ -92,19 +92,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_1,  KC_2,  KC_3,  KC_4,  KC_5,     KC_6,    KC_7,     KC_8,     KC_9,   KC_0,
         KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,    BR_LBRC, KC_MINUS, KC_EQUAL, BR_GRV, BR_QUOT,
         KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,    BR_RBRC, BR_BSLS,  KC_COMMA, KC_DOT, BR_SLSH,
-        OSM(KC_LCTL), KC_TRNS,                OSM(KC_LGUI), OSM(KC_LALT)
+        OSM(MOD_LCTL), KC_TRNS,               OSM(MOD_LGUI), OSM(MOD_LALT)
     ),
     [KPD] = LAYOUT_split_3x5_2(
         KC_NO, KC_NO, KC_KP_SLASH, KC_KP_ASTERISK, KC_NO,    KC_KP_0,     KC_KP_1, KC_KP_2, KC_KP_3, KC_NO,
         KC_NO, KC_NO, KC_KP_MINUS, KC_KP_PLUS,     KC_NO,    KC_KP_DOT,   KC_KP_4, KC_KP_5, KC_KP_6, KC_NO,
         KC_NO, KC_NO, KC_PERCENT,  KC_KP_EQUAL,    KC_NO,    KC_KP_COMMA, KC_KP_7, KC_KP_8, KC_KP_9, KC_NO,
-        OSM(KC_LCTL), KC_TRNS,                               OSM(KC_LGUI), OSM(KC_LALT)
+        OSM(MOD_LCTL), KC_TRNS,                              OSM(MOD_LGUI), OSM(MOD_LALT)
     ),
     [SYM] = LAYOUT_split_3x5_2(
         LSFT(KC_1), LSFT(KC_2), LSFT(KC_3), LSFT(KC_4), LSFT(KC_5),    LSFT(KC_6),    LSFT(KC_7),     LSFT(KC_8),     LSFT(KC_9),   LSFT(KC_0),
         KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,         LSFT(BR_LBRC), LSFT(KC_MINUS), LSFT(KC_EQUAL), BR_GRV,       LSFT(BR_QUOT),
         KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,         LSFT(BR_RBRC), LSFT(BR_BSLS),  LSFT(KC_COMMA), LSFT(KC_DOT), LSFT(BR_SLSH),
-        KC_RCTL, KC_TRNS,                                              OSM(KC_LGUI), OSM(KC_LALT)
+        OSM(MOD_LCTL), KC_TRNS,                                        OSM(MOD_LGUI), OSM(MOD_LALT)
     ),
     [NAV] = LAYOUT_split_3x5_2(
         KC_LSFT, KC_LGUI, KC_LALT, KC_LCTL, KC_NO,    KC_HOME, KC_PGDN, KC_PGUP, KC_END,   KC_NO,
@@ -125,10 +125,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_NO, KC_NO,                         KC_NO, KC_NO
     ),
     [FNC] = LAYOUT_split_3x5_2(
-        KC_NO, OSM(KC_F3), OSM(KC_F2), OSM(KC_F1), OSM(KC_F10),    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-        KC_NO, OSM(KC_F6), OSM(KC_F5), OSM(KC_F4), OSM(KC_F11),    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-        KC_NO, OSM(KC_F9), OSM(KC_F8), OSM(KC_F7), OSM(KC_F12),    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-        KC_TRNS, KC_TRNS,                                          KC_TRNS, KC_TRNS
+        KC_NO, KC_F3, KC_F2, KC_F1, KC_F10,    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        KC_NO, KC_F6, KC_F5, KC_F4, KC_F11,    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        KC_NO, KC_F9, KC_F8, KC_F7, KC_F12,    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        OSM(MOD_LCTL), KC_TRNS,                OSM(MOD_LGUI), OSM(MOD_LALT)
     ),
     [SYS] = LAYOUT_split_3x5_2(
         KC_NO, KC_NO,   KC_NO,     KC_NO, OU_BT,      KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
