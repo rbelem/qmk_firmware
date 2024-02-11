@@ -82,6 +82,13 @@ void osl_num_lgui_finished (tap_dance_state_t *state, void *user_data) {
     case SINGLE_HOLD:
         register_code(KC_LGUI);
         break;
+    case DOUBLE_HOLD:
+        layer_on(NUM);
+        break;
+    case TRIPLE_HOLD:
+        register_code(KC_LGUI);
+        layer_on(NUM);
+        break;
   }
 }
 
@@ -89,6 +96,8 @@ void osl_num_lgui_reset (tap_dance_state_t *state, void *user_data) {
   switch (osl_num_lgui_tap_state.state) {
     case SINGLE_TAP: break;
     case SINGLE_HOLD: unregister_code(KC_LGUI); break;
+    case DOUBLE_HOLD: layer_off(NUM); break;
+    case TRIPLE_HOLD: layer_off(NUM); unregister_code(KC_LGUI); break;
   }
   osl_num_lgui_tap_state.state = 0;
 }
