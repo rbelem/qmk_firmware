@@ -95,9 +95,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         OSM(MOD_LCTL), KC_TRNS,               OSM(MOD_LGUI), OSM(MOD_LALT)
     ),
     [KPD] = LAYOUT_split_3x5_2(
-        KC_NO, KC_NO, KC_KP_SLASH, KC_KP_ASTERISK, KC_NO,    KC_KP_0,     KC_KP_1, KC_KP_2, KC_KP_3, KC_NO,
-        KC_NO, KC_NO, KC_KP_MINUS, KC_KP_PLUS,     KC_NO,    KC_KP_DOT,   KC_KP_4, KC_KP_5, KC_KP_6, KC_NO,
-        KC_NO, KC_NO, KC_PERCENT,  KC_KP_EQUAL,    KC_NO,    KC_KP_COMMA, KC_KP_7, KC_KP_8, KC_KP_9, KC_NO,
+        KC_NO, KC_NO, KC_KP_SLASH, KC_KP_ASTERISK, KC_NO,    KC_0,     KC_1, KC_2, KC_3, KC_NO,
+        KC_NO, KC_NO, KC_KP_MINUS, KC_KP_PLUS,     KC_NO,    KC_DOT,   KC_4, KC_5, KC_6, KC_NO,
+        KC_NO, KC_NO, KC_PERCENT,  KC_KP_EQUAL,    KC_NO,    KC_COMMA, KC_7, KC_8, KC_9, KC_NO,
         OSM(MOD_LCTL), KC_TRNS,                              OSM(MOD_LGUI), OSM(MOD_LALT)
     ),
     [SYM] = LAYOUT_split_3x5_2(
